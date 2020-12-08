@@ -1,12 +1,18 @@
-import React, {Component} from 'react';
-import classes from './CalcKey.module.css';
+import React from 'react';
 
-export default class CalcKey extends Component {
-	render() {
-		return (
-			<div>
-
-			</div>
-		)
-	}
+const CalcKey = props => {
+	return (
+		<React.Fragment>
+			{ props.calckey.map((calckey, index) => {
+					return (
+						<div className={props.type} key={index}>
+							{calckey}
+						</div>
+					)
+				})
+			}
+		</React.Fragment>
+	)
 }
+
+export default CalcKey;
