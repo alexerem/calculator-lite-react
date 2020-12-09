@@ -11,7 +11,7 @@ const InputForm = props => {
 	return (
 		<div className={cls.join(' ')}>
 			<form action="" name="form">
-				<input type="text" name="textshow" placeholder="0" readOnly />
+				<input type="text" name="textshow" placeholder="0" value={props.inputtext} readOnly />
 			</form>
 		</div>
 	)

@@ -5,7 +5,11 @@ const CalcKey = props => {
 		<React.Fragment>
 			{ props.calckey.map((calckey, index) => {
 					return (
-						<div className={props.type} key={index}>
+						<div
+							className={props.type}
+							key={index}
+							onClick={()=> props.changeinput(calckey, index)}
+						>
 							{calckey}
 						</div>
 					)
