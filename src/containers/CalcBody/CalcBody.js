@@ -6,8 +6,8 @@ import CalcKey from "../../component/CalcKey/CalcKey";
 export default class CalcBody extends Component {
 
 	state = {
-		key: ["C", "(", ")", <span>&larr;</span>, "7", "8", "9", <span>&divide;</span>, "4", "5",
-			"6", <span>&times;</span>, "1", "2", "3", "-", "0", ".", "=", "+"],
+		key: ["C", "(", ")", <span>&larr;</span>, "7", "8", "9", <span>&divide;</span>,
+			"4", "5", "6", <span>&times;</span>, "1", "2", "3", "-", "0", ".", "=", "+"],
 		inputText: ''
 	}
 
@@ -51,10 +51,11 @@ export default class CalcBody extends Component {
 					type={classes.CalcKey}
 					inputtext={this.state.inputText}
 				/>
-				<CalcKey calckey={this.state.key}
-						 inputtext={this.state.inputText}
-						 type={classes.CalcKey}
-						 changeinput={this.changeInput}
+				<CalcKey
+					calckey={this.state.key}
+					inputtext={this.state.inputText}
+					type={classes.CalcKey}
+					changeinput={this.changeInput}
 				/>
 			</div>
 		)
