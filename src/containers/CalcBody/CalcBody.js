@@ -19,10 +19,12 @@ export default class CalcBody extends Component {
 			})
 		} else if (index === 18) {
 			const input = this.state.inputText
+			// eslint-disable-next-line no-eval
+			const result = eval(input)
 			this.setState({
-				// eslint-disable-next-line no-eval
-				inputText: eval(input)
+				inputText: result
 			})
+			this.props.changeInputResult(input,result)
 		} else if (index === 3) {
 			let str = this.state.inputText
 			let lengthStr = this.state.inputText.length
