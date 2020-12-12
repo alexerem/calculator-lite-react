@@ -17,6 +17,12 @@ export default class Layout extends Component {
 		})
 	}
 
+	clearInputResult = () => {
+		this.setState({
+			inputResult: ''
+		})
+	}
+
 	render() {
 		return (
 			<div className={classes.Layout}>
@@ -25,6 +31,7 @@ export default class Layout extends Component {
 				/>
 				<InputResult
 					inputResult={this.state.inputResult}
+					clearInputResult={this.clearInputResult}
 				/>
 			</div>
 		)

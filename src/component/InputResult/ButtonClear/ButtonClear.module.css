@@ -1,0 +1,29 @@
+.ButtonClear {
+    display: block;
+    position: absolute;
+    left: 305px;
+    top: 340px;
+    color: #c5c2c2;
+    z-index: 10;
+}
+
+.ButtonClear :hover {
+    color: rgba(24, 144, 255, .5);
+    border: 1px solid rgba(24, 144, 255, .5);
+    box-shadow: 0 0 10px rgba(24, 144, 255, .2);
+}
+
+.buttonClHov {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 15px;
+    border: 1px solid #c5c2c2;
+    background-color: #fff;
+}
+
+.buttonClHov :hover {
+    border: none;
+    box-shadow: none;
+}

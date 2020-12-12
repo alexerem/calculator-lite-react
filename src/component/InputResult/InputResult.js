@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input } from 'antd';
 import classes from './InputResult.module.css';
+import ButtonClear from "./ButtonClear/ButtonClear";
 
 const { TextArea } = Input;
 
@@ -19,6 +20,9 @@ const InputResult = (props) => {
 				cols={40}
 				value={inputResult}
 				className={classes.TextArea}
+			/>
+			<ButtonClear
+				clearInputResult={props.clearInputResult}
 			/>
 		</div>
 	)
