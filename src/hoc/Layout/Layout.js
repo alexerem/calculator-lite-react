@@ -7,7 +7,8 @@ import InputResult from "../../component/InputResult/InputResult";
 export default class Layout extends Component {
 
 	state = {
-		inputResult: ''
+		inputResult: '',
+		calculatorIsOn: false
 	}
 
 	changeInputResult = (input,result) => {
@@ -23,15 +24,25 @@ export default class Layout extends Component {
 		})
 	}
 
+	changeCalculatorIsOn= () => {
+		let calculatorIsOn = this.state.calculatorIsOn
+		this.setState({
+			calculatorIsOn: !calculatorIsOn
+		})
+	}
+
 	render() {
 		return (
 			<div className={classes.Layout}>
 				<CalcBody
 					changeInputResult={this.changeInputResult}
+					calculatorIsOn={this.state.calculatorIsOn}
+					calculatorOnOff={this.changeCalculatorIsOn}
 				/>
 				<InputResult
 					inputResult={this.state.inputResult}
 					clearInputResult={this.clearInputResult}
+					calculatorIsOn={this.state.calculatorIsOn}
 				/>
 			</div>
 		)

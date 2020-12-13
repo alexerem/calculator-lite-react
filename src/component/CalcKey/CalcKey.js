@@ -4,6 +4,7 @@ const CalcKey = props => {
 	return (
 		<React.Fragment>
 			{ props.calckey.map((calckey, index) => {
+				if (props.calculatorIsOn) {
 					return (
 						<div
 							className={props.type}
@@ -12,7 +13,15 @@ const CalcKey = props => {
 						>
 							{calckey}
 						</div>
-					)
+				)} else {
+					return (
+						<div
+							className={props.type}
+							key={index}
+						>
+
+						</div>
+					)}
 				})
 			}
 		</React.Fragment>

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classes from './CalcBody.module.css';
 import InputForm from "../../component/InputForm/InputForm";
 import CalcKey from "../../component/CalcKey/CalcKey";
+import ButtonOn from "../../component/ButtonOn/ButtonOn";
 
 export default class CalcBody extends Component {
 
@@ -58,7 +59,15 @@ export default class CalcBody extends Component {
 					inputtext={this.state.inputText}
 					type={classes.CalcKey}
 					changeinput={this.changeInput}
+					calculatorIsOn={this.props.calculatorIsOn}
 				/>
+
+				{
+					this.props.calculatorIsOn
+					? null
+					: <ButtonOn calculatorOnOff={this.props.calculatorOnOff} />
+				}
+
 			</div>
 		)
 	}
