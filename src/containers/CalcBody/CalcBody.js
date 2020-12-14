@@ -3,6 +3,7 @@ import classes from './CalcBody.module.css';
 import InputForm from "../../component/InputForm/InputForm";
 import CalcKey from "../../component/CalcKey/CalcKey";
 import ButtonOn from "../../component/ButtonOn/ButtonOn";
+import ButtonOff from "../../component/ButtonOff/ButtonOff";
 
 export default class CalcBody extends Component {
 
@@ -47,12 +48,19 @@ export default class CalcBody extends Component {
 		}
 	}
 
+	clearInputtext = () => {
+		this.setState({
+			inputText: ''
+		})
+	}
+
 	render() {
 		return (
 			<div className={classes.CalcBody}>
 				<InputForm
 					type={classes.CalcKey}
 					inputtext={this.state.inputText}
+					calculatorIsOn={this.props.calculatorIsOn}
 				/>
 				<CalcKey
 					calckey={this.state.key}
@@ -64,11 +72,19 @@ export default class CalcBody extends Component {
 
 				{
 					this.props.calculatorIsOn
-					? null
-					: <ButtonOn calculatorOnOff={this.props.calculatorOnOff} />
+					?
+						<ButtonOff
+							calculatorOnOff={this.props.calculatorOnOff}
+							clearInputResult={this.props.clearInputResult}
+							clearInputtext={this.clearInputtext}
+						/>
+					:
+						<ButtonOn
+							calculatorOnOff={this.props.calculatorOnOff}
+						/>
 				}
 
 			</div>
 		)
 	}
-}
+	}

@@ -25,9 +25,8 @@ export default class Layout extends Component {
 	}
 
 	changeCalculatorIsOn= () => {
-		let calculatorIsOn = this.state.calculatorIsOn
 		this.setState({
-			calculatorIsOn: !calculatorIsOn
+			calculatorIsOn: !this.state.calculatorIsOn
 		})
 	}
 
@@ -38,6 +37,7 @@ export default class Layout extends Component {
 					changeInputResult={this.changeInputResult}
 					calculatorIsOn={this.state.calculatorIsOn}
 					calculatorOnOff={this.changeCalculatorIsOn}
+					clearInputResult={this.clearInputResult}
 				/>
 				<InputResult
 					inputResult={this.state.inputResult}

@@ -18,6 +18,7 @@ const CalcKey = props => {
 						<div
 							className={props.type}
 							key={index}
+							style={{cursor: 'default'}}
 						>
 
 						</div>

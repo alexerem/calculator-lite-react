@@ -1,0 +1,15 @@
+.ButtonOff {
+    /*display: block;*/
+    position: absolute;
+    top: 125px;
+    left: 645px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 15px;
+    border: 1px solid #c5c2c2;
+    background-color: #fff;
+}
