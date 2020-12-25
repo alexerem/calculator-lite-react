@@ -41,6 +41,19 @@ export default class CalcBody extends Component {
 				value = '*'
 			}
 
+			const input = this.state.inputText
+			const lastInputSymbol = input[input.length - 1]
+
+			if (lastInputSymbol === '*' || lastInputSymbol === '/' ||
+				lastInputSymbol === '-' || lastInputSymbol === '+') {
+
+				if (value === '*' || value === '/' ||
+					value === '-' || value === '+') {
+					return
+				}
+
+			}
+
 			const key = this.state.inputText
 			this.setState({
 				inputText: key + value
