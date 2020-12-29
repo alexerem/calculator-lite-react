@@ -9,7 +9,9 @@ const InputForm = props => {
 	]
 
 	return (
+
 		<React.Fragment>
+
 			{
 				props.calculatorIsOn
 			?
@@ -25,6 +27,7 @@ const InputForm = props => {
 						</form>
 					</div>
 			}
+
 		</React.Fragment>
 	)
 }

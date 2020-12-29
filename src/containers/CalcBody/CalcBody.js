@@ -10,7 +10,8 @@ export default class CalcBody extends Component {
 	state = {
 		key: ["C", "(", ")", <span>&larr;</span>, "7", "8", "9", <span>&divide;</span>,
 			"4", "5", "6", <span>&times;</span>, "1", "2", "3", "-", "0", ".", "=", "+"],
-		inputText: ''
+		inputText: '',
+		errorEval: false
 	}
 
 	changeInput = (value, index) => {
@@ -20,13 +21,22 @@ export default class CalcBody extends Component {
 				inputText: ''
 			})
 		} else if (index === 18) {
-			const input = this.state.inputText
-			// eslint-disable-next-line no-eval
-			const result = eval(input)
-			this.setState({
-				inputText: result
-			})
-			this.props.changeInputResult(input,result)
+
+			try {
+				const input = this.state.inputText
+				// eslint-disable-next-line no-eval
+				const result = eval(input)
+				this.setState({
+					inputText: result
+				})
+				this.props.changeInputResult(input,result)
+			} catch (error) {
+				this.setState({
+					inputText: 'Недопустимое выражение',
+					errorEval: true
+				})
+			}
+
 		} else if (index === 3) {
 			let str = this.state.inputText
 			let lengthStr = this.state.inputText.length
@@ -74,6 +84,7 @@ export default class CalcBody extends Component {
 					type={classes.CalcKey}
 					inputtext={this.state.inputText}
 					calculatorIsOn={this.props.calculatorIsOn}
+					errorEval={this.state.errorEval}
 				/>
 				<CalcKey
 					calckey={this.state.key}
