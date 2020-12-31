@@ -8,6 +8,14 @@ const InputForm = props => {
 		classes.InputForm
 	]
 
+	let fontSize = null;
+
+	if (props.errorEval) {
+		fontSize = {fontSize: '14px'}
+	} else {
+		fontSize = {fontSize: '24px'}
+	}
+
 	return (
 
 		<React.Fragment>
@@ -17,8 +25,9 @@ const InputForm = props => {
 			?
 					<div className={cls.join(' ')} style={{cursor: 'default'}}>
 						<form action="" name="form">
-							<input type="text" name="textshow" placeholder="0" value={props.inputtext} readOnly />
-						</form>
+							<input type="text" name="textshow" placeholder="0" value={props.inputtext}
+								   style={fontSize} />
+					</form>
 					</div>
 			:
 					<div className={cls.join(' ')} style={{cursor: 'default'}}>

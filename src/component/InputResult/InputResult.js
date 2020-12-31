@@ -9,6 +9,8 @@ const InputResult = (props) => {
 
 	const inputResult = props.inputResult
 
+
+
 	return (
 		<React.Fragment>
 			{

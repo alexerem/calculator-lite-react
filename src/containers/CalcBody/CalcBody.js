@@ -29,7 +29,10 @@ export default class CalcBody extends Component {
 				this.setState({
 					inputText: result
 				})
-				this.props.changeInputResult(input,result)
+				// eslint-disable-next-line eqeqeq
+				if (input != result) {
+					this.props.changeInputResult(input,result)
+				}
 			} catch (error) {
 				this.setState({
 					inputText: 'Недопустимое выражение',
@@ -77,8 +80,16 @@ export default class CalcBody extends Component {
 		})
 	}
 
+	// let a = '';
+	// let b = this.state.inputText;
+	//
+	// if (a === b) {
+	// this.setState({
+	// 	errorEval: false }) }
+
 	render() {
 		return (
+
 			<div className={classes.CalcBody}>
 				<InputForm
 					type={classes.CalcKey}
