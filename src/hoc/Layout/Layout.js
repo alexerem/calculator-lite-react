@@ -24,7 +24,7 @@ export default class Layout extends Component {
 		})
 	}
 
-	changeCalculatorIsOn= () => {
+	changeCalculatorIsOn = () => {
 		this.setState({
 			calculatorIsOn: !this.state.calculatorIsOn
 		})

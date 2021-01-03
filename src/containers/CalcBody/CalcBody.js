@@ -17,9 +17,12 @@ export default class CalcBody extends Component {
 	changeInput = (value, index) => {
 
 		if (index === 0) {
+
 			this.setState({
-				inputText: ''
+				inputText: '',
+				errorEval: false
 			})
+
 		} else if (index === 18) {
 
 			try {
@@ -41,11 +44,21 @@ export default class CalcBody extends Component {
 			}
 
 		} else if (index === 3) {
-			let str = this.state.inputText
-			let lengthStr = this.state.inputText.length
-			this.setState({
-				inputText: str.slice(0, lengthStr - 1)
-			})
+
+			if (this.state.errorEval === true) {
+				this.setState({
+					inputText: '',
+					errorEval: false
+				})
+			} else {
+				let str = this.state.inputText
+				let strModif = str.toString()
+				let newStr = strModif.slice(0, -1)
+				this.setState({
+					inputText: newStr
+				})
+			}
+
 		} else {
 
 			if (index === 7) {
@@ -58,10 +71,13 @@ export default class CalcBody extends Component {
 			const lastInputSymbol = input[input.length - 1]
 
 			if (lastInputSymbol === '*' || lastInputSymbol === '/' ||
-				lastInputSymbol === '-' || lastInputSymbol === '+') {
+				lastInputSymbol === '-' || lastInputSymbol === '+' ||
+				lastInputSymbol === '.' || lastInputSymbol === 'е') {
 
 				if (value === '*' || value === '/' ||
-					value === '-' || value === '+') {
+					value === '-' || value === '+' ||
+					value === '.' || lastInputSymbol === 'е') {
+
 					return
 				}
 
@@ -79,13 +95,6 @@ export default class CalcBody extends Component {
 			inputText: ''
 		})
 	}
-
-	// let a = '';
-	// let b = this.state.inputText;
-	//
-	// if (a === b) {
-	// this.setState({
-	// 	errorEval: false }) }
 
 	render() {
 		return (
@@ -120,6 +129,7 @@ export default class CalcBody extends Component {
 				}
 
 			</div>
+
 		)
 	}
 	}
