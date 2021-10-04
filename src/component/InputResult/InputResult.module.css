@@ -5,6 +5,7 @@
 
 .TextArea {
     resize: none;
+    width: 290px;
     text-align: right;
     color: #9c9999;
 }
