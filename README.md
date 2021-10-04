@@ -1,6 +1,8 @@
 ### New "Calculator Lite" for React
 
-Rewritten the simple version of 'Calculator Lite' (https://github.com/alexerem/calculator-lite) on React technology, with advanced features :)
+Use it at the link :)
+
+#### https://calc.alexerem.ru/
 
 Technologies used - javascript, react, antdesign
 
