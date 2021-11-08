@@ -3,3 +3,10 @@
     justify-content: center;
     user-select: none;
 }
+
+@media (max-width: 800px) {
+    .Layout {
+        flex-direction: column;
+        align-items: center;
+    }
+}

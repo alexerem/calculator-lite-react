@@ -13,3 +13,10 @@
     border: 1px solid #c5c2c2;
     background-color: #fff;
 }
+
+@media (max-width: 800px) {
+    .ButtonOff {
+        top: 550px;
+        left: 330px;
+    }
+}

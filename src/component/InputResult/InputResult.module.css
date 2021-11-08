@@ -9,3 +9,9 @@
     text-align: right;
     color: #9c9999;
 }
+
+@media (max-width: 800px) {
+    .InputResult {
+        padding-bottom: 30px;
+    }
+}
