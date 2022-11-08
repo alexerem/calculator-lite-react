@@ -81,7 +81,6 @@ export default class CalcBody extends Component {
 
 					return
 				}
-
 			}
 
 			const key = this.state.inputText
@@ -139,7 +138,6 @@ export default class CalcBody extends Component {
 				}
 
 			</div>
-
 		)
 	}
 	}
