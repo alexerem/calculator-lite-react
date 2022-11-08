@@ -23,14 +23,14 @@ const InputForm = props => {
 			{
 				props.calculatorIsOn
 			?
-					<div className={cls.join(' ')} style={{cursor: 'default'}}>
+					<div className={cls.join(' ')} style={{cursor: 'default', border: '0'}}>
 						<form action="" name="form">
 							<input type="text" name="textshow" placeholder="0" value={props.inputtext}
 								   style={fontSize} />
 					</form>
 					</div>
 			:
-					<div className={cls.join(' ')} style={{cursor: 'default'}}>
+					<div className={cls.join(' ')} style={{cursor: 'default', border: '0'}}>
 						<form action="" name="form">
 							<input type="text" name="textshow" value={props.inputtext} readOnly />
 						</form>

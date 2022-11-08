@@ -11,7 +11,8 @@ export default class CalcBody extends Component {
 		key: ["C", "(", ")", <span>&larr;</span>, "7", "8", "9", <span>&divide;</span>,
 			"4", "5", "6", <span>&times;</span>, "1", "2", "3", "-", "0", ".", "=", "+"],
 		inputText: '',
-		errorEval: false
+		errorEval: false,
+		click: [false, null]
 	}
 
 	changeInput = (value, index) => {
@@ -88,6 +89,13 @@ export default class CalcBody extends Component {
 				inputText: key + value
 			})
 		}
+
+		this.setState({
+			click: [true, index]
+		})
+
+		setTimeout(() => this.setState({click: [false, null]}), 200)
+
 	}
 
 	clearInputtext = () => {
@@ -95,6 +103,7 @@ export default class CalcBody extends Component {
 			inputText: ''
 		})
 	}
+
 
 	render() {
 		return (
@@ -107,9 +116,10 @@ export default class CalcBody extends Component {
 					errorEval={this.state.errorEval}
 				/>
 				<CalcKey
+					type={classes.CalcKey}
+					click={this.state.click}
 					calckey={this.state.key}
 					inputtext={this.state.inputText}
-					type={classes.CalcKey}
 					changeinput={this.changeInput}
 					calculatorIsOn={this.props.calculatorIsOn}
 				/>

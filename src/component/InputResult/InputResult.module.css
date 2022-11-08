@@ -8,6 +8,7 @@
     width: 290px;
     text-align: right;
     color: #9c9999;
+    padding: 4px 11px 0 11px;
 }
 
 @media (max-width: 800px) {
