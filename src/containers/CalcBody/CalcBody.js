@@ -83,6 +83,7 @@ export default class CalcBody extends Component {
 				}
 			}
 
+
 			const key = this.state.inputText
 			this.setState({
 				inputText: key + value
