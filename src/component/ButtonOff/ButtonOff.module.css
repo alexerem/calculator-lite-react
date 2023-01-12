@@ -14,6 +14,22 @@
     background-color: #fff;
 }
 
+.ButtonOff:hover {
+    border-color: #e08b8b;
+    box-shadow: 0 0 15px -8px red;
+}
+
+.ButtonOff:hover img {
+    filter:
+            invert(0.4)
+            sepia(1)
+            hue-rotate(310deg)
+            saturate(200%)
+            brightness(1)
+            contrast(175%)
+    ;
+}
+
 @media (max-width: 800px) {
     .ButtonOff {
         top: 550px;
